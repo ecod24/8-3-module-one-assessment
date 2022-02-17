@@ -222,7 +222,9 @@ function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
  */
 function makeMoney(money){
   money= money.substring(1, money.length);//remove $
-  money= money.replaceAll(',', ''); //remove ,'s
+  while(money.includes(',')){
+    money= money.replace(',', '');
+  }
   return Number(money);
 }
 
